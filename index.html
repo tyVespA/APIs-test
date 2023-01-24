@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="#" alt="" />
+    <script>
+      const img = document.querySelector("img");
+      fetch(
+        "https://api.giphy.com/v1/gifs/translate?api_key=YSQLiFX2EgmLBs1uwWmgWQ0t55FjvAGX&s=dogs",
+        { mode: "cors" }
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (response) {
+          // console.log(response.data.images.original.url);
+          img.src = response.data.images.original.url;
+        });
+    </script>
+  </body>
+</html>
+
+<!-- YSQLiFX2EgmLBs1uwWmgWQ0t55FjvAGX -->
