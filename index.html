@@ -3,48 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <h1>Gifs generator:</h1>
-    <button class="random">Generate random gif</button>
+    <h1>Gifs generator</h1>
+    <!-- <button class="random-btn">Generate random gif</button> -->
     <p>Search for:</p>
     <form action="">
       <label for="userInput"></label>
       <input type="text" />
-      <button>Search</button>
+      <button class="search-btn">Search</button>
     </form>
     <br />
     <br />
     <img src="#" alt="" />
-    <script>
-      const img = document.querySelector("img");
-      const keyword = "test";
-      const btnRandom = document.querySelector(".random");
-      const userInput = document.querySelector("input").value;
-
-      btnRandom.addEventListener("click", fetchGif);
-
-      function fetchGif() {
-        // getKeyword(keyword);
-        fetch(
-          "https://api.giphy.com/v1/gifs/translate?api_key=YSQLiFX2EgmLBs1uwWmgWQ0t55FjvAGX&s=" +
-            keyword,
-          { mode: "cors" }
-        )
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (response) {
-            console.log(response.data.images.original.url);
-            img.src = "";
-            img.src = response.data.images.original.url;
-          });
-      }
-
-      // function getKeyword(keyword) {
-      //   if(keyword)
-      // }
-    </script>
   </body>
 </html>
 
